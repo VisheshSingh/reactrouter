@@ -2,19 +2,25 @@ import React, { Component } from "react";
 
 class Post extends Component {
   state = {
-    id: ""
+    post: ""
   };
 
   componentDidMount() {
     let id = this.props.match.params.post_id;
-    this.setState({
-      id
-    });
+    fetch("https://jsonplaceholder.typicode.com/posts/" + id)
+      .then(res => res.json())
+      .then(post => {
+        return this.setState({
+          post: post
+        });
+      });
   }
   render() {
+    const { title, body } = this.state.post;
     return (
       <div>
-        <p>{this.state.id}</p>
+        <h1>{title}</h1>
+        <p>{body}</p>
       </div>
     );
   }

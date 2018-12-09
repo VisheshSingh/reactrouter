@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   state = {
@@ -18,8 +19,10 @@ class Home extends Component {
     let postList = posts.length ? (
       posts.map(post => {
         return (
-          <div>
-            <h2>{post.title}</h2>
+          <div key={post.id}>
+            <Link to={"/" + post.id}>
+              <h2>{post.title}</h2>
+            </Link>
             <p>{post.body}</p>
           </div>
         );
