@@ -19,11 +19,17 @@ class Home extends Component {
     let postList = posts.length ? (
       posts.map(post => {
         return (
-          <div key={post.id} className="card">
-            <Link to={"/" + post.id}>
-              <h2 className="title">{post.title}</h2>
-            </Link>
-            <p className="body">{post.body}</p>
+          <div key={post.id} className="card post">
+            <img
+              src={`http://robohash.org/${post.id}?set=set2`}
+              alt={`robot${post.id}`}
+            />
+            <div className="content">
+              <Link to={"/" + post.id}>
+                <h2 className="title">{post.title}</h2>
+              </Link>
+              <p className="body">{post.body}</p>
+            </div>
           </div>
         );
       })
