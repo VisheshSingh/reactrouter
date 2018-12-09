@@ -18,9 +18,9 @@ class Post extends Component {
   render() {
     const { title, body } = this.state.post;
     return (
-      <div>
-        <h1>{title}</h1>
-        <p>{body}</p>
+      <div className="card">
+        <h1 className="title">{title}</h1>
+        <p className="body"> {body}</p>
       </div>
     );
   }

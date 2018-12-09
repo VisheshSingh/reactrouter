@@ -13,12 +13,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/:post_id" component={Post} />
-        </Switch>
+        <div className="container">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/:post_id" component={Post} />
+          </Switch>
+        </div>
       </div>
     </BrowserRouter>
   );
