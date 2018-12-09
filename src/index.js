@@ -4,7 +4,8 @@ import Nav from "./Nav";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
-import { BrowserRouter, Route } from "react-router-dom";
+import Post from "./Post";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./styles.css";
 
 function App() {
@@ -12,9 +13,12 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav />
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/:post_id" component={Post} />
+        </Switch>
       </div>
     </BrowserRouter>
   );
